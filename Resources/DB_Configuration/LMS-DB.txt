@@ -1,0 +1,119 @@
+DROP DATABASE IF EXISTS Library;
+CREATE DATABASE IF NOT EXISTS Library;
+
+USE Library;
+
+CREATE TABLE User(
+                     username VARCHAR(20) NOT NULL,
+                     password VARCHAR(26) NOT NULL,
+                     CONSTRAINT PRIMARY KEY (username)
+);
+
+CREATE TABLE Member(
+                       id VARCHAR(10) NOT NULL,
+                       name VARCHAR(30),
+                       email VARCHAR(255),
+                       mobileNo VARCHAR(15),
+                       address VARCHAR(30),
+                       issuedBooks INT,
+                       date1 DATE,
+                       CONSTRAINT PRIMARY KEY (id)
+);
+
+CREATE TABLE Book(
+                     id VARCHAR(10) NOT NULL,
+                     name VARCHAR(40),
+                     author VARCHAR(40),
+                     publisher VARCHAR(40),
+                     description VARCHAR(100),
+                     stock INT,
+                     date1 DATE,
+                     CONSTRAINT PRIMARY KEY (id)
+);
+
+CREATE TABLE IssueBook(
+                          issueID VARCHAR(10) NOT NULL,
+                          bookID VARCHAR(6) NOT NULL,
+                          memberID VARCHAR(6) NOT NULL,
+                          issueDate DATE,
+                          dueDate DATE,
+                          status VARCHAR(10),
+                          CONSTRAINT PRIMARY KEY (issueID)
+);
+
+CREATE TABLE IssueBookDetail(
+                                issueID VARCHAR(10) NOT NULL,
+                                bookID VARCHAR(6),
+                                memberID VARCHAR(6),
+                                issueDate DATE,
+                                dueDate DATE,
+                                returnDate DATE,
+                                fine DECIMAL(10,2)
+);
+
+#-----------------------------------------------------------------------------------------------
+
+#--------------------User-------------------
+
+INSERT INTO User VALUES('admin','admin123');
+
+
+#--------------------Member---------------------------------------------------------------------
+
+INSERT INTO Member VALUES('M001','Saman','saman@gmail.com','0716958423','Galle',1,'2022-01-02');
+INSERT INTO Member VALUES('M002','Kasun','kasun@gmail.com','0773697594','Galle',2,'2022-01-02');
+INSERT INTO Member VALUES('M003','Sanduni','sanduni@gmail.com','0711593574','Galle',1,'2022-01-23');
+INSERT INTO Member VALUES('M004','Nimal','nimal@gmail.com','0752049637','Galle',1,'2022-01-23');
+INSERT INTO Member VALUES('M005','Nuwan','nuwan@gmail.com','0762583691','Galle',1,'2022-01-23');
+INSERT INTO Member VALUES('M006','Lakshika','lakshika@gmail.com','0711472586','Galle',1,'2022-02-01');
+INSERT INTO Member VALUES('M007','Dinith','dinith@gmail.com','0779478265','Galle',2,'2022-02-01');
+INSERT INTO Member VALUES('M008','Gayani','gayani@gmail.com','0716548521','Galle',1,'2022-02-01');
+INSERT INTO Member VALUES('M009','Kamal','kamal@gmail.com','0716936569','Galle',1,'2022-02-06');
+INSERT INTO Member VALUES('M010','Sandun','sandun@gmail.com','0756948245','Galle',1,'2022-02-06');
+
+
+#--------------------Book----------------------------------------------------------------------------------------------------------------
+
+INSERT INTO Book VALUES('B001','Algorithms to Live By','Brian Christian and Tom Griffiths','Picador','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B002','The Soul of a New Machine','Tracy Kidder','Little, Brown and Company','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B003','Superintelligence','Nick Bostrom','Audible Studios on Brilliance Audio','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B004','Hackers','Steven Levy','Anchor Press/‎Doubleday','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B005','Code','Charles Petzold','Microsoft Press','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B006','The Chip','T.R. Reid','Random House Publishing Group','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B007','The Second Machine Age','Erik Brynjolfsson and Andrew McAfee','Norton & Company','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B008','The Innovators','Walter Isaacson','Simon & Schuster','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B009','Thinking in Systems','Donella H. Meadows','Chelsea Green Publishing','Computer Science',10,'2021-10-23');
+INSERT INTO Book VALUES('B010','The Search','John Battelle','Penguin Publishing Group','Computer Science',10,'2021-10-23');
+
+
+#--------------------IssueBook------------------------------------------------------------
+
+INSERT INTO IssueBook VALUES('I001','B001','M001','2022-01-05','2022-01-19','Returned');
+INSERT INTO IssueBook VALUES('I002','B002','M002','2022-01-10','2022-01-24','Returned');
+INSERT INTO IssueBook VALUES('I003','B003','M002','2022-01-10','2022-01-24','Returned');
+INSERT INTO IssueBook VALUES('I004','B004','M003','2022-02-01','2022-02-15','Returned');
+INSERT INTO IssueBook VALUES('I005','B005','M004','2022-02-01','2022-02-15','Returned');
+INSERT INTO IssueBook VALUES('I006','B006','M005','2022-02-02','2022-02-16','Returned');
+INSERT INTO IssueBook VALUES('I007','B007','M006','2022-02-02','2022-02-16','Returned');
+INSERT INTO IssueBook VALUES('I008','B008','M007','2022-02-03','2022-02-17','Returned');
+INSERT INTO IssueBook VALUES('I009','B009','M007','2022-02-03','2022-02-17','Returned');
+INSERT INTO IssueBook VALUES('I010','B010','M008','2022-02-04','2022-02-18','Returned');
+INSERT INTO IssueBook VALUES('I011','B001','M009','2022-02-05','2022-02-19','Returned');
+INSERT INTO IssueBook VALUES('I012','B002','M010','2022-02-06','2022-02-20','Returned');
+
+
+#--------------------IssueBookDetail--------------------------------------------------------------
+
+INSERT INTO IssueBookDetail VALUES('I001','B001','M001','2022-01-05','2022-01-19','2022-01-19',0);
+INSERT INTO IssueBookDetail VALUES('I002','B002','M002','2022-01-10','2022-01-24','2022-01-24',0);
+INSERT INTO IssueBookDetail VALUES('I003','B003','M002','2022-01-10','2022-01-24','2022-01-24',0);
+INSERT INTO IssueBookDetail VALUES('I004','B004','M003','2022-02-01','2022-02-15','2022-02-16',10);
+INSERT INTO IssueBookDetail VALUES('I005','B005','M004','2022-02-01','2022-02-15','2022-02-15',0);
+INSERT INTO IssueBookDetail VALUES('I006','B006','M005','2022-02-02','2022-02-16','2022-02-16',0);
+INSERT INTO IssueBookDetail VALUES('I007','B007','M006','2022-02-02','2022-02-16','2022-02-16',0);
+INSERT INTO IssueBookDetail VALUES('I008','B008','M007','2022-02-03','2022-02-17','2022-02-17',0);
+INSERT INTO IssueBookDetail VALUES('I009','B009','M007','2022-02-03','2022-02-17','2022-02-17',0);
+INSERT INTO IssueBookDetail VALUES('I010','B010','M008','2022-02-04','2022-02-18','2022-02-18',0);
+INSERT INTO IssueBookDetail VALUES('I011','B001','M009','2022-02-05','2022-02-19','2022-02-21',20);
+INSERT INTO IssueBookDetail VALUES('I012','B002','M010','2022-02-06','2022-02-20','2022-02-20',0);
+
