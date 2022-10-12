@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="201.0" prefWidth="442.0" style="-fx-background-color: #504B4B;"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="library.controller.AboutFormController">
+    <children>
+        <ImageView fx:id="imgLogo" fitHeight="140.0" fitWidth="200.0" layoutX="14.0" layoutY="24.0"
+                   pickOnBounds="true"/>
+        <Label layoutX="233.0" layoutY="36.0" text="MindShaper Public Library" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="233.0" layoutY="85.0" text="Version 1.0" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="233.0" layoutY="115.0" text="Designed &amp; Developed" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="233.0" layoutY="54.0" text="Management System" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Label layoutX="233.0" layoutY="133.0" text="By : Jithmi Wannakukorala" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

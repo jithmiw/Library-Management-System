@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<StackPane prefHeight="325.0" prefWidth="679.0" styleClass="roundPane" xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.controller.SplashScreenFormController">
+    <children>
+        <AnchorPane id="ROOTNODE" prefHeight="307.0" prefWidth="683.0" stylesheets="@../style/SplashScreen.css">
+            <children>
+                <Label id="txtMsg" fx:id="txtMsg" alignment="CENTER" layoutX="6.0" layoutY="136.0" prefHeight="53.0"
+                       prefWidth="668.0" text="Loading..." textFill="#000000fa">
+                    <font>
+                        <Font name="Wingdings 3" size="23.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="39.0" prefWidth="668.0"
+                       text="MINDSHAPER PUBLIC LIBRARY" AnchorPane.topAnchor="14.0">
+                    <font>
+                        <Font name="Cambria Bold" size="26.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="363.0" layoutY="295.0" text="DESIGN &amp; DEVELOPED BY : JITHMI WANNAKUKORALA">
+                    <font>
+                        <Font name="Arial Narrow Bold" size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+    <stylesheets>
+        <URL value="@../style/SplashScreen.css"/>
+    </stylesheets>
+</StackPane>

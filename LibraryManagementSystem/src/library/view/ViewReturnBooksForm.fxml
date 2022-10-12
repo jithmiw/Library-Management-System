@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="444.0" prefWidth="771.0" style="-fx-background-color: #C8D3D7;"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="library.controller.ViewReturnBooksFormController">
+    <children>
+        <TableView fx:id="dataTable" layoutX="141.0" layoutY="43.0" prefHeight="398.0" prefWidth="616.0"
+                   stylesheets="@../style/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="issueId" prefWidth="75.0" text="Issue ID"/>
+                <TableColumn fx:id="bookId" prefWidth="75.0" text="Book ID"/>
+                <TableColumn fx:id="memberId" prefWidth="75.0" text="Member ID"/>
+                <TableColumn fx:id="issueDate" prefWidth="75.0" text="Issue Date"/>
+                <TableColumn fx:id="dueDate" prefWidth="75.0" text="Due Date"/>
+                <TableColumn fx:id="returnDate" prefWidth="75.0" text="Return Date"/>
+            </columns>
+        </TableView>
+        <Label alignment="CENTER" layoutX="151.0" layoutY="1.0" prefHeight="42.0" prefWidth="452.0"
+               text="View Return Books" textFill="#3a6554" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+                <Font name="Lucida Fax Demibold" size="23.0"/>
+            </font>
+        </Label>
+        <JFXDatePicker fx:id="datePicker" defaultColor="#273950" layoutX="469.0" layoutY="7.0"
+                       onAction="#datePickerOnAction" prefHeight="31.0" prefWidth="225.0"
+                       stylesheets="@../style/Style.css" AnchorPane.rightAnchor="77.0" AnchorPane.topAnchor="7.0"/>
+        <JFXButton fx:id="btnRefresh" buttonType="RAISED" contentDisplay="CENTER" layoutX="714.0" layoutY="7.0"
+                   maxHeight="36.0" maxWidth="36.0" minHeight="31.0" minWidth="31.0" onAction="#btnRefreshOnAction"
+                   prefHeight="31.0" prefWidth="31.0" styleClass="refreshButton" stylesheets="@../style/Style.css"
+                   textFill="TRANSPARENT" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="7.0"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.0.final using JasperReports Library version 6.19.0-646c68931cebf1a58bc65c4359d1f0ca223c5e94  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="SQLChartReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="99a5e51f-a441-4040-be70-d8450101dd68">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC Connection"/>
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <queryString>
+        <![CDATA[SELECT * FROM Member]]>
+    </queryString>
+    <field name="id" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="id"/>
+        <property name="com.jaspersoft.studio.field.label" value="id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+    </field>
+    <field name="name" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="name"/>
+        <property name="com.jaspersoft.studio.field.label" value="name"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+    </field>
+    <field name="email" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="email"/>
+        <property name="com.jaspersoft.studio.field.label" value="email"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+    </field>
+    <field name="mobileNo" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="mobileNo"/>
+        <property name="com.jaspersoft.studio.field.label" value="mobileNo"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+    </field>
+    <field name="address" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="address"/>
+        <property name="com.jaspersoft.studio.field.label" value="address"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+    </field>
+    <field name="issuedBooks" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="issuedBooks"/>
+        <property name="com.jaspersoft.studio.field.label" value="issuedBooks"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+    </field>
+    <field name="date1" class="java.sql.Date">
+        <property name="com.jaspersoft.studio.field.name" value="date1"/>
+        <property name="com.jaspersoft.studio.field.label" value="date1"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="47" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="1" width="802" height="30" forecolor="#403B3B"
+                               uuid="4157ba10-2dd7-4d9c-a654-01a468718561"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[NO OF BOOKS BORROWED BY MEMBERS]]></text>
+            </staticText>
+            <line>
+                <reportElement x="0" y="33" width="802" height="1" forecolor="rgba(0, 0, 0, 0.6431373)"
+                               uuid="1f8a5b5c-c9f6-41a4-9432-2619bb39cc88">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </line>
+        </band>
+    </title>
+    <summary>
+        <band height="380" splitType="Stretch">
+            <barChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="0" y="0" width="802" height="380" uuid="c6076094-b26b-40a5-8cc6-f2628f752000"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <categoryDataset>
+                    <dataset resetType="Report"/>
+                    <categorySeries>
+                        <seriesExpression><![CDATA[$F{id}]]></seriesExpression>
+                        <categoryExpression><![CDATA[0]]></categoryExpression>
+                        <valueExpression><![CDATA[$F{issuedBooks}]]></valueExpression>
+                        <labelExpression><![CDATA[$F{name}]]></labelExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot>
+                    <plot/>
+                    <itemLabel/>
+                    <categoryAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </categoryAxisFormat>
+                    <valueAxisFormat>
+                        <axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+                    </valueAxisFormat>
+                </barPlot>
+            </barChart>
+        </band>
+    </summary>
+</jasperReport>
